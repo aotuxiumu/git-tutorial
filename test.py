@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import re, codecs
+import re, codecs, os
 
 y2n = {"<10":0, "<20":0, "<30":0, "<40":0, "<50":0, "<60":0, "<70":0, "<80":0, "<90":0, "<100":0}
 for line in codecs.open("test.txt",'r','utf-8'):
@@ -31,9 +31,8 @@ for line in codecs.open("test.txt",'r','utf-8'):
 		y2n["<80"] += 1
 	elif y< 90:
 		y2n["<90"] += 1
-	elif y< 100:
-		y2n["<100"] += 1
 	else:
 		print(line)
+		os._exit(0)
 
 print(y2n)
